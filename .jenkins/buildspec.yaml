@@ -1,6 +1,6 @@
 build:
   resolveDependency: true
-  chnageVersionNumber: false
+  chnageVersionNumber: true
   buildProject: true
   runUnitTests: true
   runSonarQubeTests: false
@@ -12,6 +12,7 @@ build:
 project:
   name: voting-worker
   builderVersion: "dotnet"
+  version: "1.0.0"
   preferedRegistryIndex: 0
   buildCsprojPath: dotnet/Worker
   restoreCsprojPath: src/Worker
