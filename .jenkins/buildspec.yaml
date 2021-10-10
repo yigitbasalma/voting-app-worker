@@ -1,0 +1,35 @@
+build:
+  resolveDependency: true
+  chnageVersionNumber: false
+  buildProject: true
+  runUnitTests: true
+  runSonarQubeTests: false
+  packageCode: true
+  uploadToRepository: true
+  buildAsContainer: true
+  runPostBuildActions: false
+
+project:
+  name: voting-worker
+  builderVersion: "dotnet3"
+  preferedRegistryIndex: 0
+
+registry:
+  - id: "dev-nexus"
+    hostedRepository: "nuget-hosted"
+    groupRepository: "nuget-group"
+    hostToArtifact: true
+
+buildArgs:
+  - "/p:DeployOnBuild=true"
+  - "/p:WebPublishMethod=FileSystem"
+  - "/p:PackageAsSingleFile=true"
+  - "/p:SkipInvalidConfigurations=true"
+  - "/p:DesktopBuildPackageLocation='$(WORKSPACE)WebApp.zip'"
+  - "/p:DeployIisAppPath='Default Web Site'"
+  - "/p:Platform='Any CPU'"
+  - "/p:Configuration=Release"
+
+containerConfig:
+  - name: voting-worker
+    dockerFilePath: docker/Dockerfile
