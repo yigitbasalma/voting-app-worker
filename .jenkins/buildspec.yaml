@@ -11,7 +11,7 @@ build:
 
 project:
   name: voting-worker
-  builderVersion: "dotnet3"
+  builderVersion: "dotnet"
   preferedRegistryIndex: 0
 
 registry:
