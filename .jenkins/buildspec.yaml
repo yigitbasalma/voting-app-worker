@@ -19,7 +19,7 @@ project:
 registry:
   - id: "dev-nexus"
     hostedRepository: "nuget-hosted"
-    groupRepository: "nuget-group"
+    groupRepository: "nuget-group/index.json"
     hostToArtifact: true
 
 buildArgs:
