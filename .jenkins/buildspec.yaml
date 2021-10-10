@@ -13,7 +13,8 @@ project:
   name: voting-worker
   builderVersion: "dotnet"
   preferedRegistryIndex: 0
-  buildCsprojPath: src/Worker
+  buildCsprojPath: dotnet/Workers
+  restoreCsprojPath: src/Worker
 
 registry:
   - id: "dev-nexus"
